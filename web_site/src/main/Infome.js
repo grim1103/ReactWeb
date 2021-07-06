@@ -16,15 +16,15 @@ class Infome extends Component {
     const nowTime = moment().format('YYYY');
     var time=1800;
     var NowTime=Number(nowTime);
-    
+    console.log('Infome ID'+this.props.id);
     var _select=[];
-    while(time <= NowTime){
+    // while(time <= NowTime){
 
-        console.log(time);
+    //     console.log(time);
 
-        time=time+1;
+    //     time=time+1;
 
-    }
+    // }
     
 
     

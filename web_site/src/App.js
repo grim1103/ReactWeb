@@ -44,21 +44,22 @@ class App extends Component {
     _article=<Infome></Infome>
   }
   else{
-    //로그인 했을때
-    if(this.state.id === null){
+
+    if(this.state.mode === 'logOut'){
+     
       _header=
       <div>
         <Header onChangeMode={function(_mode){
           this.setState({
-              mode:_mode
-            }
+            mode:_mode,
+            id:null       
+          }
           );
         }.bind(this)
-         }></Header>
-          
-          
+         } id={this.state.id}></Header>
+        
       </div>
-      //로그아웃 또는 로그인 전
+
     }else{
       _header=
       <div>
@@ -68,10 +69,9 @@ class App extends Component {
           }
           );
         }.bind(this)
-         } id={this.state.id}></Header>
-         <p>{this.state.id} 님 하이 </p>
-      </div>
+         } id={this.state.id}></Header> </div>
     }
+
     _article=<Body></Body>
   }
 
