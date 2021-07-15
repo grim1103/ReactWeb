@@ -2,7 +2,7 @@ import { Component } from 'react';
 import Header from './tap/Header';
 import GameBody from './tap/GameBody';
 import MainBody from './tap/MainBody';
-import Dice from './tap/Dice';
+
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,13 @@ class App extends Component {
   };
 
   render(){
-  
+
+  const gameCss={
+      float:'left',
+      color:'green', 
+      margin: '150px'
+    }
+
   var body_State=this.state.bodyState;
   var Body=null;
 
@@ -26,17 +32,24 @@ class App extends Component {
 
     return (
       <div>
-      <Header onChangeMode={
-        function(_bodyState){
-          this.setState({
-          bodyState:_bodyState
-        }
-      );
-    }.bind(this)
-     }></Header><br/>
-      {Body}<br/>
-      <Dice></Dice>
-      </div>
+        <div>
+          <Header onChangeMode={
+          function(_bodyState){
+            this.setState({
+            bodyState:_bodyState
+              }
+            );
+          }.bind(this)} 
+          Body_state={body_State}
+          ></Header>
+        </div>
+
+        <div style= {gameCss}>
+      
+          {Body}
+
+        </div>
+    </div>
       );
   }
  
